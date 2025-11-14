@@ -165,6 +165,8 @@ Output:
 
 Benchmark results were collected using the same dataset (164 documents, 314 chunks).
 
+# Gemini 2.0 Flash Lite (faster)
+
 Performance Summary
 | RAG Setup                           | Index Build Time | Retrieval Time | LLM Time (Avg) | Notes                                      |
 | ----------------------------------- | ---------------- | -------------- | -------------- | ------------------------------------------ |
