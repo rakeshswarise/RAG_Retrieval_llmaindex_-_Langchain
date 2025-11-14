@@ -1,0 +1,10 @@
+2025-11-14 17:48:04,040 | INFO | 📂 Loading documents from /pdfs ...
+2025-11-14 17:48:22,052 | INFO | 📄 Loaded 164 files
+2025-11-14 17:48:22,068 | INFO | 🧩 Split into 314 chunks
+2025-11-14 17:48:23,624 | INFO | 🔌 Connected to Pinecone index
+2025-11-14 17:48:43,420 | INFO | 🔐 Pinecone ready in 19.8005 sec
+2025-11-14 17:48:43,420 | INFO | ✨ FAST RAG Engine Ready
+2025-11-14 17:52:08,154 | INFO | ⚡ FAST LLM Time: 1.684 sec
+2025-11-14 17:52:14,599 | INFO | 🔎 Retrieval Time: 3.4638 sec
+2025-11-14 17:52:14,609 | INFO | 📚 Retrieved 5 chunks
+2025-11-14 17:52:18,868 | INFO | ⚡ FAST LLM Time: 4.2651 sec

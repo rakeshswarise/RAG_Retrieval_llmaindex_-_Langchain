@@ -1,0 +1,9 @@
+2025-11-14 17:46:11,965 | INFO | 📂 Loading documents from /pdfs ...
+2025-11-14 17:46:30,703 | INFO | 📄 Loaded 164 files
+2025-11-14 17:46:30,715 | INFO | 🧩 Split into 314 chunks
+2025-11-14 17:46:39,827 | INFO | 🔐 FAISS built in 9.0961 sec
+2025-11-14 17:46:39,827 | INFO | ✨ FAST RAG Engine Ready (LangChain + FAISS)
+2025-11-14 17:46:45,974 | INFO | ⚡ FAST LLM Time: 1.7106 sec
+2025-11-14 17:46:51,757 | INFO | 🔎 RAG Retrieval Time: 0.4256 sec
+2025-11-14 17:46:51,762 | INFO | 📚 Retrieved 5 chunks
+2025-11-14 17:46:56,257 | INFO | ⚡ FAST LLM Time: 4.496 sec

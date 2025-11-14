@@ -1,0 +1,9 @@
+2025-11-14 17:54:08,930 | INFO | 📂 Loading documents from /pdfs ...
+2025-11-14 17:54:33,907 | INFO | 🧠 Generating embeddings for 164 documents...
+2025-11-14 17:54:46,452 | INFO | ✅ Embeddings completed in 11.202 seconds
+2025-11-14 17:54:46,452 | INFO | 📌 Vector store: <class 'llama_index.core.vector_stores.simple.SimpleVectorStore'>
+2025-11-14 17:54:46,452 | INFO | ✨ FAST RAG Engine Ready
+2025-11-14 17:54:54,139 | INFO | ⚡ FAST LLM Time: 1.2609 sec
+2025-11-14 17:54:57,590 | INFO | 🔎 RAG Retrieval Time: 0.5236 sec
+2025-11-14 17:54:57,597 | INFO | 📚 Retrieved 5 nodes
+2025-11-14 17:55:02,130 | INFO | ⚡ FAST LLM Time: 4.5346 sec
