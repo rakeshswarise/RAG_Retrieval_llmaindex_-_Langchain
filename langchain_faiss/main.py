@@ -67,7 +67,7 @@ from langchain_community.vectorstores import FAISS
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.document_loaders import PyPDFLoader, TextLoader
 
-GEMINI_API_KEY = "AIzaSyBkjXLcA-_4FNgjXf_CBgGjC1lHf3YID8o"
+GEMINI_API_KEY = ""
 
 # Global holders
 vector_store = None

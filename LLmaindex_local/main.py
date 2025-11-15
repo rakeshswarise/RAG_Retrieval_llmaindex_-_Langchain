@@ -63,7 +63,7 @@ from llama_index.core import SimpleDirectoryReader, VectorStoreIndex, Settings
 from llama_index.llms.google_genai import GoogleGenAI
 from llama_index.embeddings.google_genai import GoogleGenAIEmbedding
 
-GEMINI_API_KEY = "AIzaSyBkjXLcA-_4FNgjXf_CBgGjC1lHf3YID8o"
+GEMINI_API_KEY = ""
 
 Settings.log_level = "INFO"
 

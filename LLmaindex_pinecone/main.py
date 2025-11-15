@@ -72,8 +72,8 @@ from pinecone import Pinecone, ServerlessSpec
 
 
 # ---- API keys ----
-GEMINI_API_KEY = "AIzaSyCbwJW0un35h7rj4WxzRqVW_I-mxz_YZHw"
-PINECONE_API_KEY = "pcsk_3L7wBy_2YmQaPiMkxaB4T3vjZPuEEx6rCS76KNnPRZgdPdpAFFKAmen2k1mpgtRnS3KsSV"
+GEMINI_API_KEY = ""
+PINECONE_API_KEY = ""
 INDEX_NAME = "quiz-index"
 
 

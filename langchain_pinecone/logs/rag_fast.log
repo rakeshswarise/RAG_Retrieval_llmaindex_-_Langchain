@@ -8,3 +8,790 @@
 2025-11-14 17:52:14,599 | INFO | 🔎 Retrieval Time: 3.4638 sec
 2025-11-14 17:52:14,609 | INFO | 📚 Retrieved 5 chunks
 2025-11-14 17:52:18,868 | INFO | ⚡ FAST LLM Time: 4.2651 sec
+2025-11-14 19:31:47,517 | INFO | 📂 Loading documents from /pdfs ...
+2025-11-14 19:32:00,839 | INFO | 📄 Loaded 164 files
+2025-11-14 19:32:00,848 | INFO | 🧩 Split into 314 chunks
+2025-11-14 19:32:02,416 | INFO | 🔌 Connected to Pinecone index
+2025-11-14 19:32:22,063 | INFO | 🔐 Pinecone ready in 19.6435 sec
+2025-11-14 19:32:22,064 | INFO | ✨ FAST RAG Engine Ready
+2025-11-14 19:32:28,568 | ERROR | Topic error:
+Traceback (most recent call last):
+  File "C:\Users\rakes\OneDrive\Desktop\Quiz_all\langchain_pinecone\main.py", line 207, in get_topics
+    raw = await llm_call_fast(prompt)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\OneDrive\Desktop\Quiz_all\langchain_pinecone\main.py", line 129, in llm_call_fast
+    res = await llm_fast.ainvoke(prompt)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\language_models\llms.py", line 413, in ainvoke
+    llm_result = await self.agenerate_prompt(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\language_models\llms.py", line 777, in agenerate_prompt
+    return await self.agenerate(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\language_models\llms.py", line 1227, in agenerate
+    return await self._agenerate_helper(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\language_models\llms.py", line 1043, in _agenerate_helper
+    await self._agenerate(
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\language_models\llms.py", line 676, in _agenerate
+    return await run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\config.py", line 617, in run_in_executor
+    return await asyncio.get_running_loop().run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\config.py", line 608, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_google_genai\llms.py", line 102, in _generate
+    chat_result = self.client._generate(
+                  ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_google_genai\chat_models.py", line 1275, in _generate
+    response: GenerateContentResponse = _chat_with_retry(
+                                        ^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_google_genai\chat_models.py", line 210, in _chat_with_retry
+    return _chat_with_retry(**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\tenacity\__init__.py", line 336, in wrapped_f
+    return copy(f, *args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\tenacity\__init__.py", line 475, in __call__
+    do = self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\tenacity\__init__.py", line 376, in iter
+    result = action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\tenacity\__init__.py", line 418, in exc_check
+    raise retry_exc.reraise()
+          ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\tenacity\__init__.py", line 185, in reraise
+    raise self.last_attempt.result()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\tenacity\__init__.py", line 478, in __call__
+    result = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_google_genai\chat_models.py", line 208, in _chat_with_retry
+    raise e
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_google_genai\chat_models.py", line 192, in _chat_with_retry
+    return generation_method(**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\google\ai\generativelanguage_v1beta\services\generative_service\client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\google\api_core\gapic_v1\method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\google\api_core\retry\retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\google\api_core\retry\retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\google\api_core\retry\retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\google\api_core\retry\retry_unary.py", line 144, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\google\api_core\timeout.py", line 120, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\google\api_core\grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 Resource exhausted. Please try again later. Please refer to https://cloud.google.com/vertex-ai/generative-ai/docs/error-code-429 for more details.
+2025-11-14 19:34:02,741 | INFO | 📂 Loading documents from /pdfs ...
+2025-11-14 19:34:15,078 | INFO | 📄 Loaded 164 files
+2025-11-14 19:34:15,078 | INFO | 🧩 Split into 314 chunks
+2025-11-14 19:34:16,534 | INFO | 🔌 Connected to Pinecone index
+2025-11-14 19:34:18,477 | ERROR | Fatal startup error:
+Traceback (most recent call last):
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_google_genai\embeddings.py", line 228, in embed_documents
+    result = self.client.batch_embed_contents(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\google\ai\generativelanguage_v1beta\services\generative_service\client.py", line 1392, in batch_embed_contents
+    response = rpc(
+               ^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\google\api_core\gapic_v1\method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\google\api_core\retry\retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\google\api_core\retry\retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\google\api_core\retry\retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\google\api_core\retry\retry_unary.py", line 144, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\google\api_core\timeout.py", line 120, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\google\api_core\grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.PermissionDenied: 403 Your API key was reported as leaked. Please use another API key.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\rakes\OneDrive\Desktop\Quiz_all\langchain_pinecone\main.py", line 181, in startup_event
+    vector_store = PineconeVectorStore.from_documents(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\vectorstores\base.py", line 848, in from_documents
+    return cls.from_texts(texts, embedding, metadatas=metadatas, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_pinecone\vectorstores.py", line 978, in from_texts
+    pinecone.add_texts(
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_pinecone\vectorstores.py", line 357, in add_texts
+    embeddings = self._embedding.embed_documents(chunk_texts)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_google_genai\embeddings.py", line 232, in embed_documents
+    raise GoogleGenerativeAIError(f"Error embedding content: {e}") from e
+langchain_google_genai._common.GoogleGenerativeAIError: Error embedding content: 403 Your API key was reported as leaked. Please use another API key.
+2025-11-14 19:35:54,801 | INFO | 📂 Loading documents from /pdfs ...
+2025-11-14 19:36:06,870 | INFO | 📄 Loaded 164 files
+2025-11-14 19:36:06,878 | INFO | 🧩 Split into 314 chunks
+2025-11-14 19:36:08,171 | INFO | 🔌 Connected to Pinecone index
+2025-11-14 19:36:25,724 | INFO | 🔐 Pinecone ready in 17.5504 sec
+2025-11-14 19:36:25,724 | INFO | ✨ FAST RAG Engine Ready
+2025-11-14 19:36:34,794 | ERROR | Topic error:
+Traceback (most recent call last):
+  File "C:\Users\rakes\OneDrive\Desktop\Quiz_all\langchain_pinecone\main.py", line 207, in get_topics
+    raw = await llm_call_fast(prompt)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\OneDrive\Desktop\Quiz_all\langchain_pinecone\main.py", line 129, in llm_call_fast
+    res = await llm_fast.ainvoke(prompt)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\language_models\llms.py", line 413, in ainvoke
+    llm_result = await self.agenerate_prompt(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\language_models\llms.py", line 777, in agenerate_prompt
+    return await self.agenerate(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\language_models\llms.py", line 1227, in agenerate
+    return await self._agenerate_helper(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\language_models\llms.py", line 1043, in _agenerate_helper
+    await self._agenerate(
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\language_models\llms.py", line 676, in _agenerate
+    return await run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\config.py", line 617, in run_in_executor
+    return await asyncio.get_running_loop().run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\config.py", line 608, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_google_genai\llms.py", line 102, in _generate
+    chat_result = self.client._generate(
+                  ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_google_genai\chat_models.py", line 1275, in _generate
+    response: GenerateContentResponse = _chat_with_retry(
+                                        ^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_google_genai\chat_models.py", line 210, in _chat_with_retry
+    return _chat_with_retry(**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\tenacity\__init__.py", line 336, in wrapped_f
+    return copy(f, *args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\tenacity\__init__.py", line 475, in __call__
+    do = self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\tenacity\__init__.py", line 376, in iter
+    result = action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\tenacity\__init__.py", line 418, in exc_check
+    raise retry_exc.reraise()
+          ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\tenacity\__init__.py", line 185, in reraise
+    raise self.last_attempt.result()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\tenacity\__init__.py", line 478, in __call__
+    result = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_google_genai\chat_models.py", line 208, in _chat_with_retry
+    raise e
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_google_genai\chat_models.py", line 192, in _chat_with_retry
+    return generation_method(**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\google\ai\generativelanguage_v1beta\services\generative_service\client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\google\api_core\gapic_v1\method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\google\api_core\retry\retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\google\api_core\retry\retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\google\api_core\retry\retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\google\api_core\retry\retry_unary.py", line 144, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\google\api_core\timeout.py", line 120, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\google\api_core\grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 Resource exhausted. Please try again later. Please refer to https://cloud.google.com/vertex-ai/generative-ai/docs/error-code-429 for more details.
+2025-11-14 19:37:07,202 | INFO | 📂 Loading documents from /pdfs ...
+2025-11-14 19:37:21,760 | INFO | 📄 Loaded 164 files
+2025-11-14 19:37:21,768 | INFO | 🧩 Split into 314 chunks
+2025-11-14 19:37:23,416 | INFO | 🔌 Connected to Pinecone index
+2025-11-14 19:37:41,885 | INFO | 🔐 Pinecone ready in 18.4791 sec
+2025-11-14 19:37:41,885 | INFO | ✨ FAST RAG Engine Ready
+2025-11-14 19:37:46,861 | INFO | 📂 Loading documents from /pdfs ...
+2025-11-14 19:37:59,905 | INFO | 📄 Loaded 164 files
+2025-11-14 19:37:59,913 | INFO | 🧩 Split into 314 chunks
+2025-11-14 19:39:12,120 | INFO | 📂 Loading documents from /pdfs ...
+2025-11-14 19:39:24,045 | INFO | 📄 Loaded 164 files
+2025-11-14 19:39:24,055 | INFO | 🧩 Split into 314 chunks
+2025-11-14 19:39:25,601 | INFO | 🔌 Connected to Pinecone index
+2025-11-14 19:39:44,449 | INFO | 🔐 Pinecone ready in 18.8424 sec
+2025-11-14 19:39:44,449 | INFO | ✨ FAST RAG Engine Ready
+2025-11-14 19:40:01,025 | INFO | ⚡ FAST LLM Time: 1.7105 sec
+2025-11-14 19:40:06,268 | INFO | 🔎 Retrieval Time: 0.6829 sec
+2025-11-14 19:40:06,268 | INFO | 📚 Retrieved 5 chunks
+2025-11-14 19:40:10,441 | INFO | ⚡ FAST LLM Time: 4.1762 sec
+2025-11-14 19:43:04,786 | INFO | 📂 Loading documents from /pdfs ...
+2025-11-14 19:43:16,935 | INFO | 📄 Loaded 164 files
+2025-11-14 19:43:16,940 | INFO | 🧩 Split into 314 chunks
+2025-11-14 19:43:18,506 | INFO | 🔌 Connected to Pinecone index
+2025-11-14 19:43:35,844 | INFO | 🔐 Pinecone ready in 17.3525 sec
+2025-11-14 19:43:35,860 | INFO | ✨ FAST RAG Engine Ready
+2025-11-14 19:43:57,183 | INFO | ⚡ FAST LLM Time: 2.2264 sec
+2025-11-14 19:44:09,606 | INFO | 🔎 Retrieval Time: 0.702 sec
+2025-11-14 19:44:09,606 | INFO | 📚 Retrieved 5 chunks
+2025-11-14 19:49:22,454 | INFO | 📂 Loading documents from /pdfs ...
+2025-11-14 19:49:34,560 | INFO | 📄 Loaded 164 files
+2025-11-14 19:49:34,568 | INFO | 🧩 Split into 314 chunks
+2025-11-14 19:49:36,244 | INFO | 🔌 Connected to Pinecone index
+2025-11-14 19:49:56,456 | INFO | 🔐 Pinecone ready in 20.2116 sec
+2025-11-14 19:49:56,457 | INFO | ✨ FAST RAG Engine Ready
+2025-11-14 19:50:02,180 | INFO | ⚡ FAST LLM Time: 2.3108 sec
+2025-11-14 19:50:07,793 | INFO | 🔎 Retrieval Time: 0.7228 sec
+2025-11-14 19:50:07,794 | INFO | 📚 Retrieved 5 chunks
+2025-11-14 19:50:29,303 | INFO | ⚡ FAST LLM Time: 21.5086 sec
+2025-11-14 19:51:23,734 | INFO | 🔎 Retrieval Time: 2.2172 sec
+2025-11-14 19:51:23,735 | INFO | 📚 Retrieved 5 chunks
+2025-11-14 19:51:47,278 | INFO | ⚡ FAST LLM Time: 23.5425 sec
+2025-11-14 19:52:48,937 | INFO | 🔎 Retrieval Time: 2.2056 sec
+2025-11-14 19:52:48,938 | INFO | 📚 Retrieved 5 chunks
+2025-11-14 19:53:27,298 | INFO | ⚡ FAST LLM Time: 38.3596 sec
+2025-11-14 19:54:10,566 | INFO | 📂 Loading documents from /pdfs ...
+2025-11-14 19:54:22,520 | INFO | 📄 Loaded 164 files
+2025-11-14 19:54:22,529 | INFO | 🧩 Split into 314 chunks
+2025-11-14 19:54:24,455 | INFO | 🔌 Connected to Pinecone index
+2025-11-14 19:54:42,183 | INFO | 🔐 Pinecone ready in 17.727 sec
+2025-11-14 19:54:42,184 | INFO | ✨ FAST RAG Engine Ready
+2025-11-14 19:54:46,715 | INFO | 📂 Loading documents from /pdfs ...
+2025-11-14 19:54:58,920 | INFO | 📄 Loaded 164 files
+2025-11-14 19:54:58,929 | INFO | 🧩 Split into 314 chunks
+2025-11-14 19:55:00,473 | INFO | 🔌 Connected to Pinecone index
+2025-11-14 19:55:19,272 | INFO | 🔐 Pinecone ready in 18.7976 sec
+2025-11-14 19:55:19,272 | INFO | ✨ FAST RAG Engine Ready
+2025-11-14 19:55:20,592 | INFO | ⚡ FAST LLM Time: 1.311 sec
+2025-11-14 19:55:26,170 | INFO | 🔎 Retrieval Time: 0.7316 sec
+2025-11-14 19:55:26,171 | INFO | 📚 Retrieved 5 chunks
+2025-11-14 19:55:29,171 | ERROR | Quiz generation error:
+Traceback (most recent call last):
+  File "C:\Users\rakes\OneDrive\Desktop\Quiz_all\langchain_pinecone\main.py", line 249, in start_quiz
+    raw = await llm_call_fast(prompt)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\OneDrive\Desktop\Quiz_all\langchain_pinecone\main.py", line 129, in llm_call_fast
+    res = await llm_fast.ainvoke(prompt)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\language_models\llms.py", line 413, in ainvoke
+    llm_result = await self.agenerate_prompt(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\language_models\llms.py", line 777, in agenerate_prompt
+    return await self.agenerate(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\language_models\llms.py", line 1227, in agenerate
+    return await self._agenerate_helper(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\language_models\llms.py", line 1043, in _agenerate_helper
+    await self._agenerate(
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\language_models\llms.py", line 676, in _agenerate
+    return await run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\config.py", line 617, in run_in_executor
+    return await asyncio.get_running_loop().run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\config.py", line 608, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_google_genai\llms.py", line 102, in _generate
+    chat_result = self.client._generate(
+                  ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_google_genai\chat_models.py", line 1275, in _generate
+    response: GenerateContentResponse = _chat_with_retry(
+                                        ^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_google_genai\chat_models.py", line 210, in _chat_with_retry
+    return _chat_with_retry(**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\tenacity\__init__.py", line 336, in wrapped_f
+    return copy(f, *args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\tenacity\__init__.py", line 475, in __call__
+    do = self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\tenacity\__init__.py", line 376, in iter
+    result = action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\tenacity\__init__.py", line 418, in exc_check
+    raise retry_exc.reraise()
+          ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\tenacity\__init__.py", line 185, in reraise
+    raise self.last_attempt.result()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\tenacity\__init__.py", line 478, in __call__
+    result = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_google_genai\chat_models.py", line 208, in _chat_with_retry
+    raise e
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_google_genai\chat_models.py", line 192, in _chat_with_retry
+    return generation_method(**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\google\ai\generativelanguage_v1beta\services\generative_service\client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\google\api_core\gapic_v1\method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\google\api_core\retry\retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\google\api_core\retry\retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\google\api_core\retry\retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\google\api_core\retry\retry_unary.py", line 144, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\google\api_core\timeout.py", line 120, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\google\api_core\grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 Resource exhausted. Please try again later. Please refer to https://cloud.google.com/vertex-ai/generative-ai/docs/error-code-429 for more details.
+2025-11-14 19:55:33,279 | INFO | ⚡ FAST LLM Time: 1.125 sec
+2025-11-14 19:55:39,973 | INFO | 🔎 Retrieval Time: 0.7214 sec
+2025-11-14 19:55:39,974 | INFO | 📚 Retrieved 5 chunks
+2025-11-14 19:55:42,839 | ERROR | Quiz generation error:
+Traceback (most recent call last):
+  File "C:\Users\rakes\OneDrive\Desktop\Quiz_all\langchain_pinecone\main.py", line 249, in start_quiz
+    raw = await llm_call_fast(prompt)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\OneDrive\Desktop\Quiz_all\langchain_pinecone\main.py", line 129, in llm_call_fast
+    res = await llm_fast.ainvoke(prompt)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\language_models\llms.py", line 413, in ainvoke
+    llm_result = await self.agenerate_prompt(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\language_models\llms.py", line 777, in agenerate_prompt
+    return await self.agenerate(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\language_models\llms.py", line 1227, in agenerate
+    return await self._agenerate_helper(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\language_models\llms.py", line 1043, in _agenerate_helper
+    await self._agenerate(
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\language_models\llms.py", line 676, in _agenerate
+    return await run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\config.py", line 617, in run_in_executor
+    return await asyncio.get_running_loop().run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\config.py", line 608, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_google_genai\llms.py", line 102, in _generate
+    chat_result = self.client._generate(
+                  ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_google_genai\chat_models.py", line 1275, in _generate
+    response: GenerateContentResponse = _chat_with_retry(
+                                        ^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_google_genai\chat_models.py", line 210, in _chat_with_retry
+    return _chat_with_retry(**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\tenacity\__init__.py", line 336, in wrapped_f
+    return copy(f, *args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\tenacity\__init__.py", line 475, in __call__
+    do = self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\tenacity\__init__.py", line 376, in iter
+    result = action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\tenacity\__init__.py", line 418, in exc_check
+    raise retry_exc.reraise()
+          ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\tenacity\__init__.py", line 185, in reraise
+    raise self.last_attempt.result()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\tenacity\__init__.py", line 478, in __call__
+    result = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_google_genai\chat_models.py", line 208, in _chat_with_retry
+    raise e
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_google_genai\chat_models.py", line 192, in _chat_with_retry
+    return generation_method(**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\google\ai\generativelanguage_v1beta\services\generative_service\client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\google\api_core\gapic_v1\method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\google\api_core\retry\retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\google\api_core\retry\retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\google\api_core\retry\retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\google\api_core\retry\retry_unary.py", line 144, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\google\api_core\timeout.py", line 120, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\google\api_core\grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 Resource exhausted. Please try again later. Please refer to https://cloud.google.com/vertex-ai/generative-ai/docs/error-code-429 for more details.
+2025-11-14 19:56:27,843 | INFO | 📂 Loading documents from /pdfs ...
+2025-11-14 19:56:40,282 | INFO | 📄 Loaded 164 files
+2025-11-14 19:56:40,290 | INFO | 🧩 Split into 314 chunks
+2025-11-14 19:56:41,864 | INFO | 🔌 Connected to Pinecone index
+2025-11-14 19:56:58,622 | INFO | 🔐 Pinecone ready in 16.759 sec
+2025-11-14 19:56:58,623 | INFO | ✨ FAST RAG Engine Ready
+2025-11-14 19:57:03,612 | INFO | ⚡ FAST LLM Time: 1.2659 sec
+2025-11-14 19:57:08,820 | INFO | 🔎 Retrieval Time: 0.695 sec
+2025-11-14 19:57:08,821 | INFO | 📚 Retrieved 5 chunks
+2025-11-14 19:57:11,871 | ERROR | Quiz generation error:
+Traceback (most recent call last):
+  File "C:\Users\rakes\OneDrive\Desktop\Quiz_all\langchain_pinecone\main.py", line 249, in start_quiz
+    raw = await llm_call_fast(prompt)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\OneDrive\Desktop\Quiz_all\langchain_pinecone\main.py", line 129, in llm_call_fast
+    res = await llm_fast.ainvoke(prompt)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\language_models\llms.py", line 413, in ainvoke
+    llm_result = await self.agenerate_prompt(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\language_models\llms.py", line 777, in agenerate_prompt
+    return await self.agenerate(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\language_models\llms.py", line 1227, in agenerate
+    return await self._agenerate_helper(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\language_models\llms.py", line 1043, in _agenerate_helper
+    await self._agenerate(
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\language_models\llms.py", line 676, in _agenerate
+    return await run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\config.py", line 617, in run_in_executor
+    return await asyncio.get_running_loop().run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\config.py", line 608, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_google_genai\llms.py", line 102, in _generate
+    chat_result = self.client._generate(
+                  ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_google_genai\chat_models.py", line 1275, in _generate
+    response: GenerateContentResponse = _chat_with_retry(
+                                        ^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_google_genai\chat_models.py", line 210, in _chat_with_retry
+    return _chat_with_retry(**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\tenacity\__init__.py", line 336, in wrapped_f
+    return copy(f, *args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\tenacity\__init__.py", line 475, in __call__
+    do = self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\tenacity\__init__.py", line 376, in iter
+    result = action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\tenacity\__init__.py", line 418, in exc_check
+    raise retry_exc.reraise()
+          ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\tenacity\__init__.py", line 185, in reraise
+    raise self.last_attempt.result()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\tenacity\__init__.py", line 478, in __call__
+    result = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_google_genai\chat_models.py", line 208, in _chat_with_retry
+    raise e
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_google_genai\chat_models.py", line 192, in _chat_with_retry
+    return generation_method(**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\google\ai\generativelanguage_v1beta\services\generative_service\client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\google\api_core\gapic_v1\method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\google\api_core\retry\retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\google\api_core\retry\retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\google\api_core\retry\retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\google\api_core\retry\retry_unary.py", line 144, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\google\api_core\timeout.py", line 120, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\google\api_core\grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 Resource exhausted. Please try again later. Please refer to https://cloud.google.com/vertex-ai/generative-ai/docs/error-code-429 for more details.
+2025-11-14 19:58:18,081 | INFO | 📂 Loading documents from /pdfs ...
+2025-11-14 19:58:29,833 | INFO | 📄 Loaded 164 files
+2025-11-14 19:58:29,841 | INFO | 🧩 Split into 314 chunks
+2025-11-14 19:58:31,206 | INFO | 🔌 Connected to Pinecone index
+2025-11-14 19:58:47,042 | INFO | 🔐 Pinecone ready in 15.8364 sec
+2025-11-14 19:58:47,042 | INFO | ✨ FAST RAG Engine Ready
+2025-11-14 19:58:55,551 | ERROR | Topic error:
+Traceback (most recent call last):
+  File "C:\Users\rakes\OneDrive\Desktop\Quiz_all\langchain_pinecone\main.py", line 207, in get_topics
+    raw = await llm_call_fast(prompt)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\OneDrive\Desktop\Quiz_all\langchain_pinecone\main.py", line 129, in llm_call_fast
+    res = await llm_fast.ainvoke(prompt)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\language_models\llms.py", line 413, in ainvoke
+    llm_result = await self.agenerate_prompt(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\language_models\llms.py", line 777, in agenerate_prompt
+    return await self.agenerate(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\language_models\llms.py", line 1227, in agenerate
+    return await self._agenerate_helper(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\language_models\llms.py", line 1043, in _agenerate_helper
+    await self._agenerate(
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\language_models\llms.py", line 676, in _agenerate
+    return await run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\config.py", line 617, in run_in_executor
+    return await asyncio.get_running_loop().run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\config.py", line 608, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_google_genai\llms.py", line 102, in _generate
+    chat_result = self.client._generate(
+                  ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_google_genai\chat_models.py", line 1275, in _generate
+    response: GenerateContentResponse = _chat_with_retry(
+                                        ^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_google_genai\chat_models.py", line 210, in _chat_with_retry
+    return _chat_with_retry(**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\tenacity\__init__.py", line 336, in wrapped_f
+    return copy(f, *args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\tenacity\__init__.py", line 475, in __call__
+    do = self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\tenacity\__init__.py", line 376, in iter
+    result = action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\tenacity\__init__.py", line 418, in exc_check
+    raise retry_exc.reraise()
+          ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\tenacity\__init__.py", line 185, in reraise
+    raise self.last_attempt.result()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\tenacity\__init__.py", line 478, in __call__
+    result = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_google_genai\chat_models.py", line 208, in _chat_with_retry
+    raise e
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_google_genai\chat_models.py", line 192, in _chat_with_retry
+    return generation_method(**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\google\ai\generativelanguage_v1beta\services\generative_service\client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\google\api_core\gapic_v1\method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\google\api_core\retry\retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\google\api_core\retry\retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\google\api_core\retry\retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\google\api_core\retry\retry_unary.py", line 144, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\google\api_core\timeout.py", line 120, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\google\api_core\grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 Resource exhausted. Please try again later. Please refer to https://cloud.google.com/vertex-ai/generative-ai/docs/error-code-429 for more details.
+2025-11-14 19:59:57,591 | INFO | 📂 Loading documents from /pdfs ...
+2025-11-14 20:00:10,136 | INFO | 📄 Loaded 164 files
+2025-11-14 20:00:10,144 | INFO | 🧩 Split into 314 chunks
+2025-11-14 20:00:11,848 | INFO | 🔌 Connected to Pinecone index
+2025-11-14 20:00:28,792 | INFO | 🔐 Pinecone ready in 16.9442 sec
+2025-11-14 20:00:28,793 | INFO | ✨ FAST RAG Engine Ready
+2025-11-14 20:00:36,453 | ERROR | Topic error:
+Traceback (most recent call last):
+  File "C:\Users\rakes\OneDrive\Desktop\Quiz_all\langchain_pinecone\main.py", line 207, in get_topics
+    raw = await llm_call_fast(prompt)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\OneDrive\Desktop\Quiz_all\langchain_pinecone\main.py", line 129, in llm_call_fast
+    res = await llm_fast.ainvoke(prompt)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\language_models\llms.py", line 413, in ainvoke
+    llm_result = await self.agenerate_prompt(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\language_models\llms.py", line 777, in agenerate_prompt
+    return await self.agenerate(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\language_models\llms.py", line 1227, in agenerate
+    return await self._agenerate_helper(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\language_models\llms.py", line 1043, in _agenerate_helper
+    await self._agenerate(
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\language_models\llms.py", line 676, in _agenerate
+    return await run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\config.py", line 617, in run_in_executor
+    return await asyncio.get_running_loop().run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\runnables\config.py", line 608, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_google_genai\llms.py", line 102, in _generate
+    chat_result = self.client._generate(
+                  ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_google_genai\chat_models.py", line 1275, in _generate
+    response: GenerateContentResponse = _chat_with_retry(
+                                        ^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_google_genai\chat_models.py", line 210, in _chat_with_retry
+    return _chat_with_retry(**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\tenacity\__init__.py", line 336, in wrapped_f
+    return copy(f, *args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\tenacity\__init__.py", line 475, in __call__
+    do = self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\tenacity\__init__.py", line 376, in iter
+    result = action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\tenacity\__init__.py", line 418, in exc_check
+    raise retry_exc.reraise()
+          ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\tenacity\__init__.py", line 185, in reraise
+    raise self.last_attempt.result()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\tenacity\__init__.py", line 478, in __call__
+    result = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_google_genai\chat_models.py", line 208, in _chat_with_retry
+    raise e
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_google_genai\chat_models.py", line 192, in _chat_with_retry
+    return generation_method(**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\google\ai\generativelanguage_v1beta\services\generative_service\client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\google\api_core\gapic_v1\method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\google\api_core\retry\retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\google\api_core\retry\retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\google\api_core\retry\retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\google\api_core\retry\retry_unary.py", line 144, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\google\api_core\timeout.py", line 120, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rakes\AppData\Local\Programs\Python\Python312\Lib\site-packages\google\api_core\grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 Resource exhausted. Please try again later. Please refer to https://cloud.google.com/vertex-ai/generative-ai/docs/error-code-429 for more details.
+2025-11-14 20:03:36,701 | INFO | 📂 Loading documents from /pdfs ...
+2025-11-14 20:03:49,818 | INFO | 📄 Loaded 164 files
+2025-11-14 20:03:49,826 | INFO | 🧩 Split into 314 chunks
+2025-11-14 20:03:51,529 | INFO | 🔌 Connected to Pinecone index
+2025-11-14 20:04:09,102 | INFO | 🔐 Pinecone ready in 17.572 sec
+2025-11-14 20:04:09,103 | INFO | ✨ FAST RAG Engine Ready
+2025-11-14 20:04:16,132 | INFO | ⚡ FAST LLM Time: 1.5062 sec
+2025-11-14 20:04:22,571 | INFO | 🔎 Retrieval Time: 0.7471 sec
+2025-11-14 20:04:22,572 | INFO | 📚 Retrieved 5 chunks
+2025-11-14 20:04:26,895 | INFO | ⚡ FAST LLM Time: 4.3238 sec
+2025-11-14 20:05:01,848 | INFO | 🔎 Retrieval Time: 0.7124 sec
+2025-11-14 20:05:01,849 | INFO | 📚 Retrieved 5 chunks
+2025-11-14 20:05:06,351 | INFO | ⚡ FAST LLM Time: 4.5021 sec

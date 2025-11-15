@@ -53,8 +53,8 @@ app.add_middleware(
 # KEYS + ENV SETUP
 # =====================================================
 
-GEMINI_API_KEY = "AIzaSyBkjXLcA-_4FNgjXf_CBgGjC1lHf3YID8o"
-PINECONE_API_KEY = "pcsk_3L7wBy_2YmQaPiMkxaB4T3vjZPuEEx6rCS76KNnPRZgdPdpAFFKAmen2k1mpgtRnS3KsSV"
+GEMINI_API_KEY = ""
+PINECONE_API_KEY = ""
 
 os.environ["PINECONE_API_KEY"] = PINECONE_API_KEY
 
